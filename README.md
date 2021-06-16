@@ -3,10 +3,53 @@
 > 순천향대학교 빅데이터공학과
 2017143 한태규
 
+
+
+
 아래의 문서 URL : [https://www.notion.so/0494c0b1c6a1438a99c5f2d49d6467e9]()
 
 github : [https://github.com/TaegyuHan/Unstructured_data_analysis_finalTest_SCH](https://github.com/TaegyuHan/Unstructured_data_analysis_finalTest_SCH)
 
+
+
+
+# Folder 구조
+```r
+│  README.md
+│
+├─draw # draw file
+│      이미지 설명.drawio
+│      프로세스.drawio
+│
+├─README_IMG # 이미지 저장공간
+│
+└─src
+    │  .Rhistory
+    │  DataLoad.R # 데이터 load 파일
+    │  library.R # 라이브러리 설치 및 load 파일
+    │  upSampling.R # Train Data upSampling 파일
+    │
+    ├─TesT데이터만들기 # 새로운 데이터를 TEST로 만드는 파일
+    │  │  산술통계_TEST데이터_만들기.R
+    │  │  산술통계_피크_합친_TEST_만들기.R
+    │  │  피크_TEST데이터_만들기.R
+    │  │
+    │  └─model # model 저장파일
+    │          RFModelPeak.rda
+    │          RFModelPKST.rda
+    │          RFModelstatistic.rda
+    │
+    ├─교수님_word_전처리 
+    │      교수님코드.R # 교수님 word code 파일
+    │
+    ├─데이터_하나로합치기 
+    │      데이터합치기.R # csv 파일 전처리 파일
+    │
+    └─분석 # 분석과정 저장 파일
+            산술_통계.R
+            산술통계_피크.R
+            피크.R
+```
 
 
 
