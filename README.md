@@ -14,7 +14,7 @@ github : [https://github.com/TaegyuHan/Unstructured_data_analysis_finalTest_SCH]
 
 
 # Folder 구조
-```r
+```text
 │  README.md
 │
 ├─draw # draw file
