@@ -3,8 +3,7 @@
 > 순천향대학교 빅데이터공학과
 2017143 한태규
 
-아래의 문서 URL : 
-[https://www.notion.so/0494c0b1c6a1438a99c5f2d49d6467e9]()
+아래의 문서 URL : [https://www.notion.so/0494c0b1c6a1438a99c5f2d49d6467e9]()
 github : [https://github.com/TaegyuHan/Unstructured_data_analysis_finalTest_SCH](https://github.com/TaegyuHan/Unstructured_data_analysis_finalTest_SCH)
 
 
