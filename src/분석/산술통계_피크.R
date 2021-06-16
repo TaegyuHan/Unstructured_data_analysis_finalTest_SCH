@@ -35,6 +35,9 @@ PeakstatisticTestData <- cbind(statisticsPreProcessTestData[c("mean", "min")],
                                PeakTestdataframe[nameslist],
                                event = PeakTestdataframe$event)
 
+# save(PeakstatisticTrainData, file = "PeakstatisticTrainData.RData")
+# save(PeakstatisticTestData, file = "PeakstatisticTestData.RData")
+
 # --------------------------------------------------------------------------- #
 
 

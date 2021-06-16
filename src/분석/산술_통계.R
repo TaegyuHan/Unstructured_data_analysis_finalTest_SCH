@@ -151,6 +151,10 @@ statisticsPreProcessTestData <- data.frame(
   skewness = apply(TestData[,1:15000], 1,  e1071::skewness),
   event = as.factor(TestData$event)
 )
+
+# save(statisticsPreProcessTrainData, file="statisticsPreProcessTrainData.RData")
+# save(statisticsPreProcessTestData, file="statisticsPreProcessTestData.RData")
+
 # --------------------------------------------------------------------------- #
 
 # --------------------------------------------------------------------------- #
