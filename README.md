@@ -29,7 +29,8 @@ github : [https://github.com/TaegyuHan/Unstructured_data_analysis_finalTest_SCH]
     │  library.R # 라이브러리 설치 및 load 파일
     │  upSampling.R # Train Data upSampling 파일
     │
-    ├─TesT데이터만들기 # 새로운 데이터를 TEST로 만드는 파일
+    ├─TesT데이터만들기 # 새로운 데이터를 TEST로 만들고
+    │  │              #  모델 실행 파일
     │  │  산술통계_TEST데이터_만들기.R
     │  │  산술통계_피크_합친_TEST_만들기.R
     │  │  피크_TEST데이터_만들기.R
