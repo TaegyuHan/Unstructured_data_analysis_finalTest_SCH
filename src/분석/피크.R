@@ -351,6 +351,13 @@ summary(RFModelPeak)
 Folds10 <- evaluate_Weka_classifier(RFModelPeak, numFolds = 10, complexity = TRUE, class = TRUE)
 
 
+# 모델 저장
+# setwd(MODEL_PATH)
+# .jcache(RFModelPeak$classifier)
+# save(RFModelPeak, file="RFModelPeak.rda")
+
+
+
 # 예측
 Peakpred <- predict(RFModelPeak, newdata = PeakTestdataframe[2:52])
 
@@ -365,8 +372,4 @@ PeackaCM <- predShowConfusionMatrix(PeakTestdataframe$event, Peakpred)
 saveggplot( plot = PeackaCM, fileName = "PeackaCM", width = 600, height = 500)
 
 # --------------------------------------------------------------------------- #
-
-
-
-
 

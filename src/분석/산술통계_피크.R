@@ -47,7 +47,15 @@ RFModelPKST <- RF(as.factor(event)~., data=PeakstatisticTrainData)
 
 summary(RFModelPKST)
 
-Folds10 <- evaluate_Weka_classifier(RFModelPKST, numFolds = 10, complexity = TRUE, class = TRUE)
+Folds10 <- evaluate_Weka_classifier(RFModelPKST, 
+                                    numFolds = 10, complexity = TRUE, class = TRUE)
+
+# 모델 저장
+# setwd(MODEL_PATH)
+# .jcache(RFModelPKST$classifier)
+# save(RFModelPKST, file="RFModelPKST.rda")
+
+
 
 # 예측
 predPKST <- predict(RFModelPKST, newdata = PeakstatisticTestData[1:13])

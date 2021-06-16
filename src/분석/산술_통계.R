@@ -158,14 +158,20 @@ statisticsPreProcessTestData <- data.frame(
 # 모델 호출
 RF <- RWeka::make_Weka_classifier("weka/classifiers/trees/RandomForest")
 
-RFModelstatistic <- RF(as.factor(event)~., data=statisticsPreProcessData)
+RFModelstatistic <- RF(as.factor(event)~., data=statisticsPreProcessTrainData)
 
 summary(RFModelstatistic)
 
-Folds10 <- evaluate_Weka_classifier(m, numFolds = 10, complexity = TRUE, class = TRUE)
+Folds10 <- evaluate_Weka_classifier(RFModelstatistic, 
+                                    numFolds = 10, complexity = TRUE, class = TRUE)
+
+# 모델 저장
+# setwd(MODEL_PATH)
+# .jcache(RFModelstatistic$classifier)
+# save(RFModelstatistic, file="RFModelstatistic.rda")
 
 # 예측
-pred <- predict(RFModelstatistic, newdata = statisticsPreProcessTestData[1:8])
+predStatistic <- predict(RFModelstatistic, newdata = statisticsPreProcessTestData[1:8])
 
 # --------------------------------------------------------------------------- #
 
@@ -190,13 +196,11 @@ predShowConfusionMatrix <- function(TargetData, predData)
                               prediction_col = "prediction",
                               counts_col = "n",
                               palette = "Greens" )
-  
 }
 
-AllDataCM <- predShowConfusionMatrix(statisticsPreProcessTestData$event, predData)
+AllDataCM <- predShowConfusionMatrix(statisticsPreProcessTestData$event, predStatistic)
 
 # 이미지 저장
 saveggplot( plot = AllDataCM, fileName = "AllDataCM", width = 600, height = 500)
 
 # --------------------------------------------------------------------------- #
-
