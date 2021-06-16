@@ -52,8 +52,13 @@ load("statisticsPreProcessTestData.RData")
 load("Peakdatalist.RData") # Train 데이터
 load("PeakTestdataframe.RData") # Test 데이터
 
-
 # statistics & Peak 데이터
 load("PeakstatisticTestData.RData") # Train 데이터
 load("PeakstatisticTrainData.RData") # Test 데이터
+
+# 모델 load
+RFModelstatistic <- get(load("./model/RFModelstatistic.rda"))
+RFModelPKST <- get(load("./model/RFModelPKST.rda"))
+RFModelPeak <- get(load("./model/RFModelPeak.rda"))
+
 
