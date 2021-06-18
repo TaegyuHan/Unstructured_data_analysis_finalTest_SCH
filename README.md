@@ -59,7 +59,7 @@ github : [https://github.com/TaegyuHan/Unstructured_data_analysis_finalTest_SCH]
 
 아래의 과제의 목적은 환자의 혈압 데이터를 모델링 하여 미래의 저혈압을 예측하는 모델을 만드는 것이다.
 
-![READ_IMG/Untitled.png](READ_IMG/Untitled.png)
+![README_IMG/Untitled.png](README_IMG/Untitled.png)
 
 위의 그림과 같이 input value의 기간 동안의 데이터를 가지고 class의 구간이 저혈압인지 정상혈압인지 예측하는 모델을 만들어야한다.
 
@@ -69,7 +69,7 @@ github : [https://github.com/TaegyuHan/Unstructured_data_analysis_finalTest_SCH]
 
 ## 결과 표
 
-![READ_IMG/Untitled%201.png](READ_IMG/Untitled%201.png)
+![README_IMG/Untitled%201.png](README_IMG/Untitled%201.png)
 
 # 최종 결론
 
@@ -302,7 +302,7 @@ AllData <- rbind( Data_set$slp01a,
 
 word로 받은 code를 작동시킨 후 결과
 
-![READ_IMG/Untitled%202.png](READ_IMG/Untitled%202.png)
+![README_IMG/Untitled%202.png](README_IMG/Untitled%202.png)
 
 # Train, Test
 
@@ -346,7 +346,7 @@ class label의 데이터 분포가 한쪽으로 몰려있어서 up샘플링 해�
 - 정상혈압 : 2632
 - 저혈압 : 30
 
-![READ_IMG/Untitled%203.png](READ_IMG/Untitled%203.png)
+![README_IMG/Untitled%203.png](README_IMG/Untitled%203.png)
 
 ```r
 # --------------------------------------------------------------------------- #
@@ -358,9 +358,9 @@ TrainUPData <- groupdata2::upsample(
 # --------------------------------------------------------------------------- #
 ```
 
-![READ_IMG/upsampleBarPlotB.png](READ_IMG/upsampleBarPlotB.png)
+![README_IMG/upsampleBarPlotB.png](README_IMG/upsampleBarPlotB.png)
 
-![READ_IMG/upsampleBarPlotA.png](READ_IMG/upsampleBarPlotA.png)
+![README_IMG/upsampleBarPlotA.png](README_IMG/upsampleBarPlotA.png)
 
 ---
 
@@ -427,7 +427,7 @@ ArithmeticStatFuc <- function( inputData = AllData,
 
 ## sum ( 합 )
 
-![READ_IMG/sum.png](READ_IMG/sum.png)
+![README_IMG/sum.png](README_IMG/sum.png)
 
 ```r
 # --------------------------------------------------------------------------- #
@@ -444,7 +444,7 @@ ArithmeticStatFuc( inputData = TrainUPData,
 
 ## average ( 평균 )
 
-![READ_IMG/mean.png](READ_IMG/mean.png)
+![README_IMG/mean.png](README_IMG/mean.png)
 
 ```r
 # --------------------------------------------------------------------------- #
@@ -461,7 +461,7 @@ ArithmeticStatFuc( inputData = TrainUPData,
 
 ## min ( 최소값 )
 
-![READ_IMG/min.png](READ_IMG/min.png)
+![README_IMG/min.png](README_IMG/min.png)
 
 ```r
 # --------------------------------------------------------------------------- #
@@ -478,7 +478,7 @@ ArithmeticStatFuc( inputData = TrainUPData,
 
 ## max ( 최대값 )
 
-![READ_IMG/max.png](READ_IMG/max.png)
+![README_IMG/max.png](README_IMG/max.png)
 
 ```r
 # --------------------------------------------------------------------------- #
@@ -495,7 +495,7 @@ ArithmeticStatFuc( inputData = TrainUPData,
 
 ## geometric mean ( 기하 평균 )
 
-![READ_IMG/geometricMean.png](READ_IMG/geometricMean.png)
+![README_IMG/geometricMean.png](README_IMG/geometricMean.png)
 
 ```r
 # --------------------------------------------------------------------------- #
@@ -513,7 +513,7 @@ ArithmeticStatFuc( inputData = TrainUPData,
 
 ## median ( 중위값 )
 
-![READ_IMG/median.png](READ_IMG/median.png)
+![README_IMG/median.png](README_IMG/median.png)
 
 ```r
 # --------------------------------------------------------------------------- #
@@ -530,7 +530,7 @@ ArithmeticStatFuc( inputData = TrainUPData,
 
 ## Standard Deviation ( 표준 편차 )
 
-![READ_IMG/Standard_Deviation.png](READ_IMG/Standard_Deviation.png)
+![README_IMG/Standard_Deviation.png](README_IMG/Standard_Deviation.png)
 
 ```r
 # --------------------------------------------------------------------------- #
@@ -547,7 +547,7 @@ ArithmeticStatFuc( inputData = TrainUPData,
 
 ## skewness ( 왜도 )
 
-![READ_IMG/skewnesss.png](READ_IMG/skewnesss.png)
+![README_IMG/skewnesss.png](README_IMG/skewnesss.png)
 
 ```r
 # --------------------------------------------------------------------------- #
@@ -570,7 +570,7 @@ ArithmeticStatFuc( inputData = TrainUPData,
 
 데이터 분포 표
 
-![READ_IMG/Untitled%204.png](READ_IMG/Untitled%204.png)
+![README_IMG/Untitled%204.png](README_IMG/Untitled%204.png)
 
 max, sd, skewness 저혈압 데이터가 전체적으로 분포해있어서 feature로 사용하기 힘들어 보인다.
 
@@ -639,7 +639,7 @@ predStatistic <- predict(RFModelstatistic, newdata = statisticsPreProcessTestDat
 # --------------------------------------------------------------------------- #
 ```
 
-![READ_IMG/Untitled%205.png](READ_IMG/Untitled%205.png)
+![README_IMG/Untitled%205.png](README_IMG/Untitled%205.png)
 
 ## Model Test
 
@@ -684,7 +684,7 @@ saveggplot( plot = AllDataCM, fileName = "AllDataCM", width = 600, height = 500)
 
 ## RF statistics Confusion Matrix
 
-![READ_IMG/AllDataCM.png](READ_IMG/AllDataCM.png)
+![README_IMG/AllDataCM.png](README_IMG/AllDataCM.png)
 
 결과로는 저혈압을 20개중에  1개를 예측했습니다. 
 
@@ -716,7 +716,7 @@ saveggplot( plot = showNBST, fileName = "showNBST", width = 600, height = 500)
 # --------------------------------------------------------------------------- #
 ```
 
-![READ_IMG/showNBST.png](READ_IMG/showNBST.png)
+![README_IMG/showNBST.png](README_IMG/showNBST.png)
 
 RF 모델 보다 저혈압 예측 성능이 20건 중에서 18건으로 증가 하였다 하지만 정상혈압 예측률이 98%에서 73%로 떨어졌다.
 
@@ -785,11 +785,11 @@ saveggplot( plot = NomalBPPlot, fileName = "NomalBPPlot", width = 600, height = 
 
 Low blood pressure
 
-![READ_IMG/LowBPPlot.png](READ_IMG/LowBPPlot.png)
+![README_IMG/LowBPPlot.png](README_IMG/LowBPPlot.png)
 
 Normal blood pressure
 
-![READ_IMG/NomalBPPlot.png](READ_IMG/NomalBPPlot.png)
+![README_IMG/NomalBPPlot.png](README_IMG/NomalBPPlot.png)
 
 둘의 시각화를 보았을 때 별로 차이가 없는 것을 알 수 있습니다.
 
@@ -861,7 +861,7 @@ saveggplot( plot = NomalBPPeakPlot,
 
 Low blood pressure
 
-![READ_IMG/LowBPDataRowOne.png](READ_IMG/LowBPDataRowOne.png)
+![README_IMG/LowBPDataRowOne.png](README_IMG/LowBPDataRowOne.png)
 
 ```r
 # 피크의 수
@@ -871,7 +871,7 @@ LowPeak %>% nrow
 
 Normal blood pressure
 
-![READ_IMG/NomalBPDataRowOne.png](READ_IMG/NomalBPDataRowOne.png)
+![README_IMG/NomalBPDataRowOne.png](README_IMG/NomalBPDataRowOne.png)
 
 ```r
 # 피크의 수
@@ -928,7 +928,7 @@ MakePeakPlot(
 
 Low blood pressure
 
-![READ_IMG/LowBPCHDataRowOne.png](READ_IMG/LowBPCHDataRowOne.png)
+![README_IMG/LowBPCHDataRowOne.png](README_IMG/LowBPCHDataRowOne.png)
 
 ```r
 # 피크의 수
@@ -938,7 +938,7 @@ NomalCHPeak %>% nrow
 
 Normal blood pressure
 
-![READ_IMG/NomalBPCHDataRowOne.png](READ_IMG/NomalBPCHDataRowOne.png)
+![README_IMG/NomalBPCHDataRowOne.png](README_IMG/NomalBPCHDataRowOne.png)
 
 ```r
 # 피크의 수
@@ -1025,7 +1025,7 @@ for (i in 100:50){
 
 ## Peak 추출 Data
 
-![READ_IMG/Untitled%206.png](READ_IMG/Untitled%206.png)
+![README_IMG/Untitled%206.png](README_IMG/Untitled%206.png)
 
 ## 저혈압, 정상혈압, Peak 추출수 비교
 
@@ -1072,7 +1072,7 @@ saveggplot( plot = PeakLinePlot, fileName = "PeakLinePlot", width = 600, height 
 
 - 정상혈압 : 파란색
 
-![READ_IMG/PeakLinePlot.png](READ_IMG/PeakLinePlot.png)
+![README_IMG/PeakLinePlot.png](README_IMG/PeakLinePlot.png)
 
 위의 그래프로 보아서 저혈압이 혈압 100이하의 Peak를 추출하였을 때 정상혈압보다 더 많이 추출되는것을 알 수 있었습니다. 혈압 65이하 까지는 저혈압 Peak의 평균 수가 더 많았고 50이하로 내려가면 둘다 0으로 Peak가 추출 안되는것을 알 수 있었습니다.
 
@@ -1169,7 +1169,7 @@ Folds10 <- evaluate_Weka_classifier(RFModelPeak,
 # save(RFModelPeak, file="RFModelPeak.rda")
 ```
 
-![READ_IMG/Untitled%207.png](READ_IMG/Untitled%207.png)
+![README_IMG/Untitled%207.png](README_IMG/Untitled%207.png)
 
 ## RF Peak Confusion Matrix
 
@@ -1189,7 +1189,7 @@ saveggplot( plot = PeackaCM, fileName = "PeackaCM", width = 600, height = 500)
 # --------------------------------------------------------------------------- #
 ```
 
-![READ_IMG/PeackaCM.png](READ_IMG/PeackaCM.png)
+![README_IMG/PeackaCM.png](README_IMG/PeackaCM.png)
 
 Peak 데이터를 Train한 RF모델의 성능은 정상혈압 예측률이 0.3%더 상승했지만 산술통계 모델과 같이 저혈압은 1개도 예측하지 못했습니다.
 
@@ -1219,7 +1219,7 @@ saveggplot( plot = showNBPK, fileName = "showNBPK", width = 600, height = 500)
 # --------------------------------------------------------------------------- #
 ```
 
-![READ_IMG/showNBPK.png](READ_IMG/showNBPK.png)
+![README_IMG/showNBPK.png](README_IMG/showNBPK.png)
 
 Peak feature 학습한  NB모델은 통계 모델 보다 저혈압 예측률은 떨어졌지만 정상혈압 예측률은 증가하였습니다.
 
@@ -1229,15 +1229,15 @@ Peak feature 학습한  NB모델은 통계 모델 보다 저혈압 예측률은 
 
 평균
 
-![READ_IMG/mean%201.png](READ_IMG/mean%201.png)
+![README_IMG/mean%201.png](README_IMG/mean%201.png)
 
 최소
 
-![READ_IMG/min%201.png](READ_IMG/min%201.png)
+![README_IMG/min%201.png](README_IMG/min%201.png)
 
 Peak 85이하 ~ 75이하 데이터
 
-![READ_IMG/PeakLinePlotMid.png](READ_IMG/PeakLinePlotMid.png)
+![README_IMG/PeakLinePlotMid.png](README_IMG/PeakLinePlotMid.png)
 
 정상혈압데이터와 저혈압데이터의 차이가 많이 나는 것들만 Feature로 정해 모델을 돌려보았습니다.
 
@@ -1287,7 +1287,7 @@ PeakstatisticTestData <- cbind(statisticsPreProcessTestData[c("mean", "min")],
 # --------------------------------------------------------------------------- #
 ```
 
-![READ_IMG/Untitled%208.png](READ_IMG/Untitled%208.png)
+![README_IMG/Untitled%208.png](README_IMG/Untitled%208.png)
 
 ## Model Trainning
 
@@ -1323,7 +1323,7 @@ saveggplot( plot = AllDataPKST, fileName = "AllDataPKST", width = 600, height = 
 # --------------------------------------------------------------------------- #
 ```
 
-![READ_IMG/AllDataPKST.png](READ_IMG/AllDataPKST.png)
+![README_IMG/AllDataPKST.png](README_IMG/AllDataPKST.png)
 
 산술통계 데이터의 mean, min feature와 Peak데이터의 minpeakheight 범위 75~85 사이의 feature를 RF Model에 Train 시켰을때 static model보다는 정상혈압 예측률이 2 높아졌으며 Peak보다는 2 낮았다.
 
@@ -1358,6 +1358,6 @@ saveggplot( plot = showNBPKST, fileName = "showNBPKST", width = 600, height = 50
 
 ## NB statistics & Peak Confusion Matrix
 
-![READ_IMG/showNBPKST.png](READ_IMG/showNBPKST.png)
+![README_IMG/showNBPKST.png](README_IMG/showNBPKST.png)
 
 저혈압 예측률이 조금 하양했지만 정상혈압 예측률이 82%로 Peak feature만 넣었을 때 보다 증가 하였습니다.
