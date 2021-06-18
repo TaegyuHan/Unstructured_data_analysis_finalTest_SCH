@@ -42,6 +42,7 @@ PeakstatisticTestData <- cbind(statisticsPreProcessTestData[c("mean", "min")],
 
 
 # --------------------------------------------------------------------------- #
+# RF 모델
 
 # 모델 호출
 RF <- RWeka::make_Weka_classifier("weka/classifiers/trees/RandomForest")
@@ -59,19 +60,42 @@ Folds10 <- evaluate_Weka_classifier(RFModelPKST,
 # save(RFModelPKST, file="RFModelPKST.rda")
 
 
-
 # 예측
 predPKST <- predict(RFModelPKST, newdata = PeakstatisticTestData[1:13])
 
 
-AllDataPKST <- predShowConfusionMatrix(PeakstatisticTestData$event, predPKST)
+showRFPKST <- predShowConfusionMatrix(PeakstatisticTestData$event, predPKST)
 
 # 이미지 저장
-saveggplot( plot = AllDataPKST, fileName = "AllDataPKST", width = 600, height = 500)
+saveggplot( plot = AllDataPKST, fileName = "showRFPKST", width = 600, height = 500)
 
 
 # --------------------------------------------------------------------------- #
 
+
+# --------------------------------------------------------------------------- #
+# NB 모델
+
+# 모델 호출
+
+NBModelPKST <- naiveBayes(as.factor(event)~., data=PeakstatisticTrainData)
+
+summary(NBModelPKST)
+
+# 모델 저장
+# setwd(MODEL_PATH)
+# save(NBModelPKST, file="NBModelPKST.rda")
+
+# 예측
+predNBPKST <- predict(NBModelPKST, newdata = PeakstatisticTestData[1:13])
+
+
+showNBPKST <- predShowConfusionMatrix(PeakstatisticTestData$event, predNBPKST)
+
+# 이미지 저장
+saveggplot( plot = showNBPKST, fileName = "showNBPKST", width = 600, height = 500)
+
+# --------------------------------------------------------------------------- #
 
 
 

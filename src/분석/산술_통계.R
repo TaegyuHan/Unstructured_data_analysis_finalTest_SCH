@@ -208,3 +208,30 @@ AllDataCM <- predShowConfusionMatrix(statisticsPreProcessTestData$event, predSta
 saveggplot( plot = AllDataCM, fileName = "AllDataCM", width = 600, height = 500)
 
 # --------------------------------------------------------------------------- #
+
+
+# --------------------------------------------------------------------------- #
+# NB 모델
+# 모델 호출
+
+NBModelST <- naiveBayes(as.factor(event)~., data=statisticsPreProcessTrainData)
+
+summary(NBModelST)
+
+# 모델 저장
+# setwd(MODEL_PATH)
+# save(NBModelST, file="NBModelST.rda")
+
+# 예측
+predNBST <- predict(NBModelST, newdata = statisticsPreProcessTestData[1:8])
+
+showNBST <- predShowConfusionMatrix(statisticsPreProcessTestData$event, predNBST)
+
+setwd(IMG_PATH)
+
+# 이미지 저장
+saveggplot( plot = showNBST, fileName = "showNBST", width = 600, height = 500)
+
+# --------------------------------------------------------------------------- #
+
+

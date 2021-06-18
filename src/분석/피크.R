@@ -340,6 +340,7 @@ for (i in 100:50){
 
 
 # --------------------------------------------------------------------------- #
+# RF
 
 # 모델 호출
 RF <- RWeka::make_Weka_classifier("weka/classifiers/trees/RandomForest")
@@ -357,14 +358,9 @@ Folds10 <- evaluate_Weka_classifier(RFModelPeak, numFolds = 10, complexity = TRU
 # save(RFModelPeak, file="RFModelPeak.rda")
 
 
-
 # 예측
 Peakpred <- predict(RFModelPeak, newdata = PeakTestdataframe[2:52])
 
-# --------------------------------------------------------------------------- #
-
-
-# --------------------------------------------------------------------------- #
 
 PeackaCM <- predShowConfusionMatrix(PeakTestdataframe$event, Peakpred)
 
@@ -372,4 +368,29 @@ PeackaCM <- predShowConfusionMatrix(PeakTestdataframe$event, Peakpred)
 saveggplot( plot = PeackaCM, fileName = "PeackaCM", width = 600, height = 500)
 
 # --------------------------------------------------------------------------- #
+
+
+
+# --------------------------------------------------------------------------- #
+# NB 모델
+# 모델 호출
+
+NBModelPK <- naiveBayes(as.factor(event)~., data=Peakdataframe[,2:53])
+
+summary(NBModelPK)
+
+# 모델 저장
+# setwd(MODEL_PATH)
+# save(NBModelPK, file="NBModelPK.rda")
+
+# 예측
+predNBPK <- predict(NBModelPK, newdata = PeakTestdataframe[2:52])
+
+showNBPK <- predShowConfusionMatrix(PeakTestdataframe$event, predNBPK)
+
+# 이미지 저장
+saveggplot( plot = showNBPK, fileName = "showNBPK", width = 600, height = 500)
+
+# --------------------------------------------------------------------------- #
+
 
